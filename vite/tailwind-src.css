@@ -1,0 +1,63 @@
+/*!
+Theme Name: Tailwind Theme
+Theme URI: http://underscores.me/
+Author: Me
+Author URI: http://underscores.me/
+Description: Custom theme: Tailwind Theme, developed by Me
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: tailwindtheme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply text-4xl;
+	}
+
+	h2 {
+		@apply text-3xl;
+	}
+
+	h3 {
+		@apply text-2xl;
+	}
+
+	a {
+		@apply hover:text-yellow-400;
+	}
+}
+
+@layer components {
+	/* navbar */
+	.site-header {
+		@apply relative;
+	}
+
+	.main-navigation .menu {
+		@apply top-full absolute md:static left-0 w-full grid md:block grid-rows-[0fr] overflow-hidden transition-[grid-template-rows];
+	}
+
+	.main-navigation.toggled .menu {
+		@apply grid-rows-[1fr] bg-blue-800 md:bg-transparent px-4;
+	}
+
+	.main-navigation .nav-menu {
+		@apply min-h-0;
+	}
+
+	/* ============== post ================= */
+
+	/* entry-footer */
+
+	.entry-footer {
+		@apply flex gap-2;
+	}
+}
